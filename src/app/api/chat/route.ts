@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     console.log('Received messages:', messages);
 
     const result = streamText({
-      model: openai("gpt-4-turbo-preview"),
+      model: openai("gpt-4.1-mini"),
       system: "You are a creative AI poet who writes beautiful and meaningful poems.",
       messages,
     });
