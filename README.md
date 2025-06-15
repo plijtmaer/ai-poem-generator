@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Poem Generator
+
+A Next.js application that generates creative poems using OpenAI's GPT-4 model. Built as part of the Agent Engineering Bootcamp (Homework 1).
+
+## Features
+
+- Real-time poem generation using AI
+- Streaming responses for immediate feedback
+- Modern, responsive UI with Tailwind CSS
+- Error handling and loading states
+
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Vercel AI SDK
+- OpenAI API
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [your-repo-url]
+cd [your-repo-name]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+pnpm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+Create a `.env.local` file in the root directory and add your OpenAI API key:
+```bash
+OPENAI_API_KEY=your-api-key-here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server:
+```bash
+pnpm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Enter a topic or theme for your poem in the input field
+2. Click "Generate a Poem" to create a new AI-generated poem
+3. The poem will stream in real-time as it's being generated
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+- `src/app/page.tsx` - Main application component with the poem generator UI
+- `src/app/api/chat/route.ts` - API route handling OpenAI interactions
+- Styling with Tailwind CSS classes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `OPENAI_API_KEY` - Your OpenAI API key (required)
+
+## Notes
+
+- Make sure to never commit your `.env.local` file
+- The application uses the GPT-4 Turbo model for optimal poem generation
